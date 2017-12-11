@@ -1,0 +1,261 @@
+﻿$primaryColor: white;
+$accentColor: #18C596;
+
+html, body {
+    height: 100%;
+    .grid-item {
+        width: 200px;
+    }
+
+    .grid-item--width2 {
+        width: 400px;
+    }
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+
+    nav {
+            position: absolute;       
+            bottom: 0px;
+            left:0px;
+            right:0px;
+            margin:0 50px;
+
+        p {
+            color: $primaryColor;
+        }
+
+        ul {
+            list-style-type: none;
+            float: right;
+
+            li {
+                display: inline;
+                margin-left: 3em;
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+        }
+    }
+
+    a {
+        color: $accentColor;
+
+        &:hover {
+            color: lighten($accentColor, 10%) !important;
+            text-decoration: none !important;
+        }
+
+        &:active {
+            color: darken($accentColor, 20%);
+        }
+
+        &:visited {
+            color: adjust-hue($accentColor, 20%);
+        }
+    }
+
+    #wrapper {
+        margin: 25px 0px;
+        padding: 0 40px;
+    }
+
+    #featuredSection {
+        width: 100%;
+        background: $accentColor;
+        color: $primaryColor;
+        padding: 0 40px;
+
+        #pageTitle {
+            float: left;
+        }
+
+        #pageOptions {
+            float: right;
+            list-style: none;
+            margin:10px 0px;
+
+            li {
+                display: inline;
+                margin-left: 2em;
+                font-size: 1em;
+                font-weight: bold;
+
+                a {
+                    color: $primaryColor;
+
+                    &:hover {
+                        color: darken($primaryColor, 30%) !important;
+                        text-decoration: none !important;
+                    }
+
+                    &:active {
+                        color: darken($accentColor, 20%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+header {
+    .padding {
+        padding: 10px;
+    }
+
+    .navSocialLinks {
+        list-style-type: none;
+
+        li {
+            display: inline;
+            margin-right: 2em;
+            text-align: right;
+            float: right;
+        }
+    }
+
+    .titleCont {
+        font-size: 8em;
+        font-weight: bold;
+        color: $primaryColor;
+
+        h1 {
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            margin-bottom: 0;
+        }
+
+        h2 {
+            margin: 0;
+            font-weight: inherit;
+            color: inherit;
+        }
+    }
+
+    .featuredBackground {
+        position:relative;
+        background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)), url('/images/background.jpeg');
+        background-size: cover;
+        height: 80vh;
+
+        .headerWrapper {
+            margin: 0px 50px;
+        }
+
+        img {
+            margin: 10px;
+            box-shadow: 5px 10px 20px;
+            border-radius: 1px;
+        }
+    }
+}
+
+section {
+    flex: 1 0 auto;
+
+    div {
+        iframe {
+            width: 100% !important;
+        }
+
+        video {
+            width: 100% !important;
+        }
+
+        .postFtImg {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+}
+
+footer {
+    background: $accentColor;
+
+    h4 {
+        color: darken($primaryColor, 100%);
+        background: $primaryColor;
+        margin: 0 auto;
+        padding: 10px;
+        width: 60%;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .author {
+        font-weight: bold;
+        margin: 0;
+        text-align: left;
+        color: $primaryColor;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+/* ---- grid ---- */
+
+.grid {
+    background: #EEE;
+    max-width: 1200px;
+}
+
+/* clearfix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item {
+    width: 160px;
+    height: 120px;
+    float: left;
+    background: #D26;
+    border: 2px solid #333;
+    border-color: hsla(0, 0%, 0%, 0.5);
+    border-radius: 5px;
+}
+
+.grid-item--width2 {
+    width: 320px;
+}
+
+.grid-item--width3 {
+    width: 480px;
+}
+
+.grid-item--width4 {
+    width: 640px;
+}
+
+.grid-item--height2 {
+    height: 200px;
+}
+
+.grid-item--height3 {
+    height: 260px;
+}
+
+.grid-item--height4 {
+    height: 360px;
+}

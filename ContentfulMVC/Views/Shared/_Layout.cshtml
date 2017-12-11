@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Lunch</title>
+
+    <environment include="Production">
+        <link rel="stylesheet" href="~/dist/css/main.css" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+@await Component.InvokeAsync("Header")
+    <!--<div class="container body-content">-->
+    
+    @RenderBody()
+    @Html.Partial("_Footer")
+    <!--<footer>
+        <p>&copy; 2017 - Lunch</p>
+    </footer>
+    </div>-->
+
+    <environment include="Development">
+        <script src="~/js/main.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Production">
+        <script src="~/dist/js/main.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
