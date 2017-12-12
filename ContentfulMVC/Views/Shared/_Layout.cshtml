@@ -11,10 +11,11 @@
     </environment>
 </head>
 <body>
-@await Component.InvokeAsync("Header")
+    @await Component.InvokeAsync("Header")
     <!--<div class="container body-content">-->
-    
+    @Html.Partial("_TopMain")
     @RenderBody()
+    @Html.Partial("_BottomMain")
     @Html.Partial("_Footer")
     <!--<footer>
         <p>&copy; 2017 - Lunch</p>
