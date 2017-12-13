@@ -13,3 +13,10 @@ var msnry = new Masonry(elem, {
 var msnry = new Masonry('.grid', {
     // options
 });
+//End: Masonry.js
+
+//Start:   Fixed on scroll Navbar
+window.addEventListener('scroll', function(e) {console.log("Scrolled");});
+
+
+//End:     Fixed on Scroll Navbar

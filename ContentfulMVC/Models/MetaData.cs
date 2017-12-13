@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Contentful.Core.Models;
 
 namespace ContentfulMVC.Models
 {
@@ -12,6 +13,6 @@ namespace ContentfulMVC.Models
         public string SubTitle { get; set; }
         //[JsonProperty("Author")]
         public Author Author { get; set; }
-        //public string BackgroundImage { get; set; }
+        public Asset BackgroundImage { get; set; }
     }
 }

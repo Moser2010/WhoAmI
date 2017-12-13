@@ -1,14 +1,21 @@
 ﻿
 @model MetaData
 <header>
+    <contentful-image asset-id="home" />
     <div class="container-fluid">
-        <div class="row padding">
-            <div class="col-sm-12 col-md-4">
-
+        <div class="row padding socialBar">
+            <div class="col-sm-12 col-md-4 scrollNavLeft invisible">
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li><a asp-action="About" asp-controller="Home">About</a></li>
+                    <li><a asp-action="Index" asp-controller="Posts">Posts</a></li>
+                    <!--<li><a asp-action="Index" asp-controller="Destinations">Destinations</a></li>-->
+                </ul>
             </div>
-            <div class="col-sm-12 col-md-4">
+            <div class="col-sm-12 col-md-4 scrollNavCenter invisible">
+                <h2><a asp-action="Index" asp-controller="Home">@Model.SiteTitle</a></h2>
             </div>
-            <div class="col-sm-12 col-md-4">
+            <div class="col-sm-12 col-md-4 scrollNavRight">
                 <ul class="navSocialLinks">
                     <li><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></li>
@@ -16,7 +23,7 @@
                 </ul>
             </div>
         </div>
-        <div class="row featuredBackground">
+        <div class="row featuredBackground" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('@Model.BackgroundImage.File.Url'); background-size: cover; Background-position: center;">
             <div class="headerWrapper {
 ">
                 <div class="row">
