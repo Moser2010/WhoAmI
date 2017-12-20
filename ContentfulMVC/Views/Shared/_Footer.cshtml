@@ -7,7 +7,11 @@
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <h4>Recent Posts</h4>
-                <div>posts titles</div>
+                <div class="footerPostList">@foreach (var post in Model)
+                {
+                    <p><a href="#">@post.Title</a></p>
+                }
+                </div>
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <h4>Social Links & copyright</h4>
@@ -15,7 +19,7 @@
         </div>
         <div class="row">
             <div class="col-sm-12">
-                <h6 class="author"> Created By <%= author %></p>
+                <h6 class="footerAuthor">Built & Designed By Cody Moser</p>
             </div>
         </div>
     </div>

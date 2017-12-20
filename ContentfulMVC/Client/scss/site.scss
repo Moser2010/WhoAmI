@@ -232,7 +232,10 @@ section {
 
 footer {
     background: $accentColor;
-
+    .footerAuthor {
+        color:white;
+        margin-top:15px;
+    }
     h4 {
         color: darken($primaryColor, 100%);
         background: $primaryColor;
@@ -249,6 +252,22 @@ footer {
         text-align: left;
         color: $primaryColor;
         text-align: center;
+    }
+
+    .footerPostList {
+        p {
+            margin: 0px;
+            text-align:center;
+
+            a {
+                color: $primaryColor;
+                text-align: center;
+
+                &:hover {
+                    color: darken($primaryColor,40%)
+                }
+            }
+        }
     }
 }
 
@@ -271,6 +290,9 @@ footer {
     text-align: left;
     border: solid white 1px;
     margin: 5px;
+    &:hover{
+        background-size:contain !important;
+    }
 
 
     .content {

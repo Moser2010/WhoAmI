@@ -6,10 +6,6 @@ var header = document.getElementsByTagName('header');
 var bar = document.getElementById("socialBar");
 var navLeft = document.getElementsByClassName("scrollNavLeft");
 var navCenter = document.getElementsByClassName("scrollNavCenter");
-header[0].addEventListener('click', function () {
-    header[0].className = "invisible";
-    console.log("Clicked on Header");
-})
 window.addEventListener('scroll', function (e) {
     if (window.scrollY > header[0].offsetHeight + bar.offsetHeight / 2) {
         bar.classList.add("fixed");
