@@ -1,8 +1,24 @@
 ﻿@model IEnumerable<ContentfulMVC.Models.Posts>;
 
 
-@foreach(var post in Model)
-{
-    <h1>post.Title</h1>
 
-}
+<div class="grid">
+    @foreach (var post in Model)
+    {
+        @if (post.Title != null)
+        {
+            <div class="item" style="background:url('@post.FeaturedImage.File.Url'); background-size:cover; ">
+                <div class="content">
+                    <h2>@post.Title</h2>
+                    <hr />
+                    <p>@post.Content.Substring(0, 120)<a href="">...More</a></p>
+                    <div class="publications">
+                        <p id="Author">By @post.Author.FullName</p>
+                        <p id="PublishDate">@post.PublishDate</p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>

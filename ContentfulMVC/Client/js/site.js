@@ -1,19 +1,5 @@
 ﻿// Write your JavaScript code.
-import Masonry from "../../node_modules/masonry-layout/masonry.js";
 
-var elem = document.querySelector('.grid');
-var msnry = new Masonry(elem, {
-    // options
-    itemSelector: '.grid-item',
-    columnWidth: 200
-});
-
-// element argument can be a selector string
-//   for an individual element
-var msnry = new Masonry('.grid', {
-    // options
-});
-//End: Masonry.js
 
 //Start:   Fixed on scroll Navbar
 var header = document.getElementsByTagName('header');
@@ -40,3 +26,40 @@ window.addEventListener('scroll', function (e) {
 
 
 //End:     Fixed on Scroll Navbar
+
+//Start:    Vertical Posts Gallery
+function masonry(container, items, spacing, dCol, tCol, mCol) {
+    //selects the following classes from the the DOM.
+    var g = document.querySelector(container),
+        //The below returns an array
+        gc = document.querySelectorAll(items),
+        //Finds the length of the array
+        gcLength = gc.length,
+        gHeight = 0,
+        i;
+
+    for (i = 0; i < gcLength; i++) {
+        gHeight += gc[i].offsetHeight + parseInt(spacing);
+        //console.log(gHeight)
+
+    }
+    if (document.documentElement.clientWidth >= 1024) {
+        g.style.height = gHeight / dCol + gHeight / (gcLength + 1)  + "px";
+    } else if (document.documentElement.clientWidth < 1024 && document.documentElement.clientWidth >= 768) {
+        g.style.height = gHeight / tCol + gHeight / (gcLength + 1)  + "px";
+    } else {
+        g.style.height = gHeight / mCol + gHeight / (gcLength + 1)  + "px";
+    }
+}
+
+
+["resize", "load"].forEach(function (event) {
+    window.addEventListener(event, function () {
+        imagesLoaded(document.querySelector('.grid'), function () {
+            // A maonsry grid with 8px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
+
+            masonry(".grid", ".item", 0, 4, 3, 1);
+        });
+    });
+});
+//End:    Vertical Posts Gallery

@@ -20,8 +20,8 @@ namespace ContentfulMVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            
-            return View();
+            var allPosts = await _client.GetEntriesAsync<Posts>();
+            return View(allPosts);
         }
 
         public async Task<IActionResult> About()

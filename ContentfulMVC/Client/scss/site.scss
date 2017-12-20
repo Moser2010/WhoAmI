@@ -3,6 +3,7 @@ $accentColor: #18C596;
 
 html, body {
     height: 100%;
+
     .grid-item {
         width: 200px;
     }
@@ -15,11 +16,13 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-    #socialBar {
-        background:$primaryColor;
-        width:100vw;
 
+    #socialBar {
+        background: $primaryColor;
+        width: 100vw;
+        border-bottom: solid $accentColor 5px;
     }
+
     .fixed {
         position: fixed;
         top: 0px;
@@ -189,14 +192,14 @@ header {
     }
 
     .featuredBackground {
-        position:relative;
+        position: relative;
         background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3));
         background-size: cover;
         height: 80vh;
 
         .headerWrapper {
             margin: 0px 50px;
-            padding-top:10%;
+            padding-top: 10%;
         }
 
         img {
@@ -255,60 +258,71 @@ footer {
 
 
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: sans-serif;
-}
-
-/* ---- grid ---- */
-
 .grid {
-    background: #EEE;
-    max-width: 1200px;
+    background: white;
+    display: flex;
+    flex-flow: column wrap;
 }
 
-/* clearfix */
-.grid:after {
-    content: '';
-    display: block;
-    clear: both;
+.item {
+    position: relative;
+    background: orange;
+    color: white;
+    text-align: left;
+    border: solid white 1px;
+    margin: 5px;
+
+
+    .content {
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        padding: 1% 3%;
+        background: rgba(0,0,0,.55);
+
+        h2, p, {
+            margin: 0px;
+        }
+
+        hr {
+            margin: 5px;
+        }
+
+        .publications {
+            width: 100%;
+            text-align: left;
+            margin-top: 15px;
+
+            p {
+                display: inline;
+            }
+
+            #Author {
+                float: left
+            }
+
+            #PublishDate {
+                float: right;
+            }
+        }
+    }
 }
 
-/* ---- grid-item ---- */
 
-.grid-item {
-    width: 160px;
-    height: 120px;
-    float: left;
-    background: #D26;
-    border: 2px solid #333;
-    border-color: hsla(0, 0%, 0%, 0.5);
-    border-radius: 5px;
-}
+.item {
+    &:nth-child(4n + 1) {
+        min-height: 300px;
+    }
 
-.grid-item--width2 {
-    width: 320px;
-}
+    &:nth-child(4n + 2) {
+        min-height: 325px;
+    }
 
-.grid-item--width3 {
-    width: 480px;
-}
+    &:nth-child(4n + 3) {
+        min-height: 275px;
+    }
 
-.grid-item--width4 {
-    width: 640px;
-}
-
-.grid-item--height2 {
-    height: 200px;
-}
-
-.grid-item--height3 {
-    height: 260px;
-}
-
-.grid-item--height4 {
-    height: 360px;
+    &:nth-child(4n + 4) {
+        min-height: 400px;
+    }
 }
