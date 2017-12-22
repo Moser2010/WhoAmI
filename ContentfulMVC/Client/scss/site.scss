@@ -40,6 +40,7 @@ body {
     }
 
     .scrollNavRight {
+        display:block;
     }
 
     .scrollNavLeft {
@@ -122,7 +123,7 @@ body {
         width: 100%;
         background: $accentColor;
         color: $primaryColor;
-        padding: 0 40px;
+        padding: 0 50px;
 
         #pageTitle {
             float: left;
@@ -232,10 +233,12 @@ section {
 
 footer {
     background: $accentColor;
+
     .footerAuthor {
-        color:white;
-        margin-top:15px;
+        color: white;
+        margin-top: 15px;
     }
+
     h4 {
         color: darken($primaryColor, 100%);
         background: $primaryColor;
@@ -255,9 +258,12 @@ footer {
     }
 
     .footerPostList {
+        margin:10px auto;
+        width:170px;
         p {
+            font-weight:bold;
             margin: 0px;
-            text-align:center;
+            text-align: center;
 
             a {
                 color: $primaryColor;
@@ -265,6 +271,112 @@ footer {
 
                 &:hover {
                     color: darken($primaryColor,40%)
+                }
+            }
+        }
+    }
+
+    #socialWrapper {
+        width: 170px;
+        height: 200px;
+        margin: 10px auto;
+
+        .socialContainer {
+            display: flex;
+            flex-flow: row wrap;
+
+            .socialItem {
+                transition: 1s;
+                text-align: center;
+                width: 75px;
+                background: white;
+                margin: 3px;
+                padding: 10px;
+                border-radius: 20px 3px 20px 3px;
+
+                .fa-facebook-f {
+                    color: aqua;
+                    transition: 1s;
+                }
+
+                .fa-youtube {
+                    color: aqua;
+                    transition: 1s;
+                }
+
+                .fa-github {
+                    color: aqua;
+                    transition: 1s;
+                }
+
+                .fa-twitter {
+                    color: aqua;
+                    transition: 1s;
+                }
+
+                &:hover {
+                    transform: scale(1.1);
+                    transition: 0.1s;
+
+                    .fa-facebook {
+                        color: #3b5998;
+                        transition: 0.7s;
+                        opacity: .5;
+                    }
+
+                    .fa-github {
+                        color: #333;
+                        transition: 0.7s;
+                        opacity: .5;
+                    }
+
+                    .fa-youtube {
+                        color: #cc181e;
+                        transition: 0.7s;
+                        opacity: .5;
+                    }
+
+                    .fa-twitter {
+                        color: #1DA1F2;
+                        transition: 0.7s;
+                        opacity: .5;
+                    }
+                }
+            }
+
+            #facebook {
+                &:hover {
+                    background: url("https://biteable.com/content/uploads/2017/09/videogif2.gif");
+                    background-position: center;
+                    background-size: cover;
+                    transition: 1s;
+                }
+            }
+
+            #youtube {
+                &:hover {
+                    background: url("https://media.giphy.com/media/xT5P0H87A5mVBkpPJS/giphy.gif");
+                    background-position: center;
+                    background-size: cover;
+                    transition: 1s;
+                }
+            }
+
+            #github {
+                &:hover {
+                    background: url("https://78.media.tumblr.com/fa970db4b26969d744c4bfabba341b90/tumblr_oaj26wjQhv1rub4txo10_r1_500.gif");
+                    background-position: center;
+                    background-size: cover;
+                    transition: 1s;
+                }
+            }
+
+            #twitter {
+                &:hover {
+                    background: url("https://thumbs.gfycat.com/SparseRemoteCowrie-max-1mb.gif");
+                    background-position: center;
+                    background-size: cover;
+                    transition: 1s;
                 }
             }
         }
@@ -346,5 +458,71 @@ footer {
 
     &:nth-child(4n + 4) {
         min-height: 400px;
+    }
+}
+
+
+
+//Mobile Break Points
+//425- Large Phone
+@media (min-width:425px){
+    body {
+
+
+        .featuredBackground .headerWrapper {
+            margin: 0px 20px;
+
+            #Nav {
+                margin: 0px 20px;
+
+                li {
+                    margin-left: 1em;
+                }
+            }
+        }
+        .scrollNavRight{
+            
+        }
+        .scrollNavLeft {
+            padding-left: 0px;
+
+            ul li a {
+                margin: 0px;
+                font-size: 1em;
+            }
+        }
+
+        #featuredSection {
+            padding: 0 20px;
+        }
+    }
+}
+//768 - Tablet
+@media (min-width:768px){
+    body {
+
+
+        .featuredBackground .headerWrapper {
+            margin: 0px 20px;
+
+            #Nav {
+                margin: 0px 20px;
+                li{
+                    margin-left:1em;
+                }
+            }
+        }
+
+        .scrollNavLeft {
+            padding-left: 0px;
+
+            ul li a {
+                margin: 0px;
+                font-size: 1em;
+            }
+        }
+        #featuredSection {
+            padding:0 20px;
+        }
     }
 }

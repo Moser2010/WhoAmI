@@ -4,7 +4,7 @@
     <contentful-image asset-id="home" />
     <div class="container-fluid">
         <div id ="socialBar" class="row padding">
-            <div class="col-sm-12 col-md-4 scrollNavLeft invisible">
+            <div class="col-sm-4 col-md-4 scrollNavLeft invisible hidden-xs">
                 <ul>
                     <li><a asp-action="Index" asp-controller="Home">Home</a></li>
                     <li><a asp-action="About" asp-controller="Home">About</a></li>
@@ -12,10 +12,22 @@
                     <!--<li><a asp-action="Index" asp-controller="Destinations">Destinations</a></li>-->
                 </ul>
             </div>
-            <div class="col-sm-12 col-md-4 scrollNavCenter invisible">
+            <!--Mobile Nav-->
+            <div class="col-xs-12 col-sm-4 col-md-4 scrollNavCenter visible-xs">
                 <h2><a asp-action="Index" asp-controller="Home">@Model.SiteTitle</a></h2>
             </div>
-            <div class="col-sm-12 col-md-4 scrollNavRight">
+            <div class="col-sm-4 col-md-4 scrollNavLeft visible-xs">
+                <ul>
+                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                    <li><a asp-action="About" asp-controller="Home">About</a></li>
+                    <li><a asp-action="Index" asp-controller="Posts">Posts</a></li>
+                    <!--<li><a asp-action="Index" asp-controller="Destinations">Destinations</a></li>-->
+                </ul>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4 scrollNavCenter invisible hidden-xs">
+                <h2><a asp-action="Index" asp-controller="Home">@Model.SiteTitle</a></h2>
+            </div>
+            <div class="col-sm-4 col-md-4 scrollNavRight hidden-xs">
                 <ul class="navSocialLinks">
                     <li><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
                     <li><a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></li>
