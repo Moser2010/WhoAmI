@@ -23,9 +23,25 @@ body {
         border-bottom: solid $accentColor 5px;
     }
 
+    .padding {
+        padding: 10px;
+    }
+
+    .navSocialLinks {
+        list-style-type: none;
+
+        li {
+            display: inline;
+            margin-right: 2em;
+            text-align: right;
+            float: right;
+        }
+    }
+
     .fixed {
         position: fixed;
         top: 0px;
+        left:0px;
         z-index: 10;
     }
 
@@ -40,7 +56,7 @@ body {
     }
 
     .scrollNavRight {
-        display:block;
+        display: block;
     }
 
     .scrollNavLeft {
@@ -161,18 +177,6 @@ header {
     .padding {
         padding: 10px;
     }
-
-    .navSocialLinks {
-        list-style-type: none;
-
-        li {
-            display: inline;
-            margin-right: 2em;
-            text-align: right;
-            float: right;
-        }
-    }
-
     .titleCont {
         font-size: 8em;
         font-weight: bold;
@@ -414,7 +418,7 @@ footer {
         padding: 1% 3%;
         background: rgba(0,0,0,.55);
 
-        h2, p, {
+        h2, p {
             margin: 0px;
         }
 
@@ -465,9 +469,15 @@ footer {
 
 //Mobile Break Points
 //425- Large Phone
-@media (min-width:425px){
+@media (max-width:425px){
     body {
 
+        .fixed {
+            position: fixed;
+            top: 0px;
+            left: auto;
+            z-index: 10;
+        }
 
         .featuredBackground .headerWrapper {
             margin: 0px 20px;
@@ -480,9 +490,10 @@ footer {
                 }
             }
         }
-        .scrollNavRight{
-            
+
+        .scrollNavRight {
         }
+
         .scrollNavLeft {
             padding-left: 0px;
 
@@ -498,7 +509,7 @@ footer {
     }
 }
 //768 - Tablet
-@media (min-width:768px){
+@media (max-width:768px){
     body {
 
 

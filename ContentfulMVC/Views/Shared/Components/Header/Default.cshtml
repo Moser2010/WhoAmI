@@ -1,40 +1,9 @@
 ﻿
 @model MetaData
+@await Component.InvokeAsync("Nav")
 <header>
     <contentful-image asset-id="home" />
-    <div class="container-fluid">
-        <div id ="socialBar" class="row padding">
-            <div class="col-sm-4 col-md-4 scrollNavLeft invisible hidden-xs">
-                <ul>
-                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
-                    <li><a asp-action="About" asp-controller="Home">About</a></li>
-                    <li><a asp-action="Index" asp-controller="Posts">Posts</a></li>
-                    <!--<li><a asp-action="Index" asp-controller="Destinations">Destinations</a></li>-->
-                </ul>
-            </div>
-            <!--Mobile Nav-->
-            <div class="col-xs-12 col-sm-4 col-md-4 scrollNavCenter visible-xs">
-                <h2><a asp-action="Index" asp-controller="Home">@Model.SiteTitle</a></h2>
-            </div>
-            <div class="col-sm-4 col-md-4 scrollNavLeft visible-xs">
-                <ul>
-                    <li><a asp-action="Index" asp-controller="Home">Home</a></li>
-                    <li><a asp-action="About" asp-controller="Home">About</a></li>
-                    <li><a asp-action="Index" asp-controller="Posts">Posts</a></li>
-                    <!--<li><a asp-action="Index" asp-controller="Destinations">Destinations</a></li>-->
-                </ul>
-            </div>
-            <div class="col-xs-12 col-sm-4 col-md-4 scrollNavCenter invisible hidden-xs">
-                <h2><a asp-action="Index" asp-controller="Home">@Model.SiteTitle</a></h2>
-            </div>
-            <div class="col-sm-4 col-md-4 scrollNavRight hidden-xs">
-                <ul class="navSocialLinks">
-                    <li><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-        </div>
+    
         <div class="row featuredBackground" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('@Model.BackgroundImage.File.Url'); background-size: cover; Background-position: center;">
             <div class="headerWrapper {
 ">
@@ -54,8 +23,20 @@
 
                 </div>
                 <div class="row">
-
-                    @await Component.InvokeAsync("Nav")
+                    <nav id="Nav">
+                        <div class="col-sm-6 col-md-6">
+                            <p>Created by<a asp-action="About" asp-controller="Home"> @Model.Author.FullName</a></p>
+                        </div>
+                        <div class="col-sm-6 col-md-6">
+                            <ul class="hidden-xs">
+                                <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                                <li><a asp-action="About" asp-controller="Home">About</a></li>
+                                <li><a asp-action="Index" asp-controller="Posts">Posts</a></li>
+                                <!--<li><a asp-action="Index" asp-controller="Destinations">Destinations</a></li>-->
+                            </ul>
+                        </div>
+                    </nav>
+                    
                 </div>
             </div>
         </div>

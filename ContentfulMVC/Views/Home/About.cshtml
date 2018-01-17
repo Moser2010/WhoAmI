@@ -1,13 +1,3 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
+﻿@await Component.InvokeAsync("Nav")
 @Html.Partial("_TopMain")
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
-
-<p>Use this area to provide additional information.</p>
-
-
-
-
-@Html.Partial("_BottomMain")
+About us page

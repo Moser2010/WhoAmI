@@ -26,8 +26,8 @@ namespace ContentfulMVC.Controllers
 
         public async Task<IActionResult> About()
         {
-           
-            return View();
+            var allPosts = await _client.GetEntriesAsync<Posts>();
+            return View("About",allPosts);
         }
 
         public IActionResult Error()

@@ -9,14 +9,11 @@ var navCenter = document.getElementsByClassName("scrollNavCenter");
 window.addEventListener('scroll', function (e) {
     if (window.scrollY > header[0].offsetHeight + bar.offsetHeight / 2) {
         bar.classList.add("fixed");
-        navLeft[0].classList.remove("invisible");
+
         navCenter[0].classList.remove("invisible");
     } else {
-        navLeft[0].classList.add("invisible");
-        navCenter[0].classList.add("invisible");
-
         bar.classList.remove("fixed");
-  
+
     }
 });
 
@@ -40,11 +37,11 @@ function masonry(container, items, spacing, dCol, tCol, mCol) {
 
     }
     if (document.documentElement.clientWidth >= 1024) {
-        g.style.height = gHeight / dCol + gHeight / (gcLength + 1)  + "px";
+        g.style.height = gHeight / dCol + gHeight / (gcLength + 1) + "px";
     } else if (document.documentElement.clientWidth < 1024 && document.documentElement.clientWidth >= 768) {
-        g.style.height = gHeight / tCol + gHeight / (gcLength + 1)  + "px";
+        g.style.height = gHeight / tCol + gHeight / (gcLength + 1) + "px";
     } else {
-        g.style.height = gHeight / mCol + gHeight / (gcLength + 1)  + "px";
+        g.style.height = gHeight / mCol + gHeight / (gcLength + 1) + "px";
     }
 }
 
