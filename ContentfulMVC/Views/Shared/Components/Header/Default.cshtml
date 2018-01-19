@@ -1,9 +1,11 @@
 ﻿
 @model MetaData
 @await Component.InvokeAsync("Nav")
-<header>
-    <contentful-image asset-id="home" />
-    
+
+<div class="container-fluid">
+    <header>
+        <contentful-image asset-id="home" />
+
         <div class="row featuredBackground" style="background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('@Model.BackgroundImage.File.Url'); background-size: cover; Background-position: center;">
             <div class="headerWrapper {
 ">
@@ -36,9 +38,9 @@
                             </ul>
                         </div>
                     </nav>
-                    
+
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
+</div>

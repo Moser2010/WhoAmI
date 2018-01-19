@@ -7,24 +7,24 @@
     {
         @if (post.Title != null)
         {
-            <a asp-controller="Posts" asp-action="SinglePost">
-                <div class="item" style="background:url('@post.FeaturedImage.File.Url'); background-size:cover; ">
-                    <div class="content">
+            <div class="item">
+                <a asp-controller="Posts" asp-action="SinglePost">
+                    <img class="masonryImage" src="@post.FeaturedImage.File.Url" />
+                </a>
+                <div class="content">
+                    <a asp-controller="Posts" asp-action="SinglePost">
                         <h2>@post.Title</h2>
-                        <hr />
-                        <p>@post.Content.Substring(0, 120)<a href="">...More</a></p>
-                        <div class="publications">
-                            <p id="Author">By <a asp-action="About" asp-controller="Home">@post.Author.FullName</a></p>
-                            <p id="PublishDate">@post.PublishDate</p>
-                        </div>
+                    </a>
+                    <hr />
+                    <p>@post.Content.Substring(0, 120)<a href="">...More</a></p>
+                    <div class="publications">
+                        <p id="Author">By <a asp-action="About" asp-controller="Home">@post.Author.FullName</a></p>
+                        <p id="PublishDate">@post.PublishDate</p>
                     </div>
+                </div>
 
-                </div>
-            </a>
-            <a href="http://google.com">
-                <div>
-                </div>
-            </a>
+            </div>
+
         }
     }
 </div>
