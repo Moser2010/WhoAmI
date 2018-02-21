@@ -4,7 +4,6 @@
     </div>
 </section>
 <footer>
-@model MetaData
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-4">
@@ -13,16 +12,8 @@
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <h4>Recent Posts</h4>
                 <div class="footerPostList">
-                    <!--{ var i = 0;}
-                    foreach (var post in Model)
-                    {
-                        if (i <= 10)
-                        {
-                            i++;
-                            <p><a href="#">post.Title</a></p>
-                        }
-
-                    }-->
+                    @Html.Partial("_PostList");
+                    
                 </div>
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4">

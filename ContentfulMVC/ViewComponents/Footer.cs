@@ -18,10 +18,9 @@ namespace ContentfulMVC.ViewComponents
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            //I dont fully understand the next two lines. I kinda understand what they are asking for but not fully!
-            var qb = QueryBuilder<MetaData>.New.FieldEquals("sys.id", "3A1FviHKNy6IQqSAq4UocQ");
-            var home = (await _client.GetEntriesAsync<MetaData>(qb)).FirstOrDefault();
-            return View(home);
+           
+            var posts = await _client.GetEntriesAsync<Posts>();
+            return View(posts);
         }
     }
 }
