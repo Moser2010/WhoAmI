@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Posts>
+
+
+@{ var i = 0;}
+@foreach (var post in Model)
+{
+    if (i <= 10)
+    {
+        i++;
+        <p><a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">@post.Title</a></p>
+    }
+
+}

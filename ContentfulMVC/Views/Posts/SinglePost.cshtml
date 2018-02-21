@@ -5,11 +5,11 @@
 }
 
 
-@await  Component.InvokeAsync("Nav")    
+@await Component.InvokeAsync("Nav")
 @Html.Partial("_TopMain")
 <h2>SinglePost</h2>
 <div class="row">
-   Sliding Image Gallery with hidden overflow
+    Sliding Image Gallery with hidden overflow
 </div>
 <div class="row">
     <h1>@Model.Title</h1>
@@ -18,5 +18,5 @@
     comments section using disqus!
 </div>
 <aside>
-    Recent Posts. You could do this as a view component maybe.
+@await Component.InvokeAsync("PostList")
 </aside>
