@@ -7,10 +7,12 @@
     {
         @if (post.Title != null)
         {
+            @Html.ActionLink("link text", "SinglePost", "Posts", new { id = @post.ID }, null)
             <div class="item">
                 <a asp-controller="Posts" asp-action="SinglePost">
                     <img class="masonryImage" src="@post.FeaturedImage.File.Url" />
                 </a>
+                
                 <div class="content">
                     <a asp-controller="Posts" asp-action="SinglePost">
                         <h2>@post.Title</h2>

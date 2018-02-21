@@ -1,7 +1,10 @@
-﻿
+﻿@model ContentfulMVC.Models.Post
+
 @{
     ViewData["Title"] = "SinglePost";
 }
+
+
 @await  Component.InvokeAsync("Nav")    
 @Html.Partial("_TopMain")
 <h2>SinglePost</h2>
@@ -9,7 +12,7 @@
    Sliding Image Gallery with hidden overflow
 </div>
 <div class="row">
-    details
+    <h1>@Model.Title</h1>
 </div>
 <div class="row">
     comments section using disqus!
