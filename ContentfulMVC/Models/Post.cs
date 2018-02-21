@@ -15,6 +15,6 @@ namespace ContentfulMVC.Models
         public Asset FeaturedImage { get; set; }
         public Author Author { get; set; }
         public string PublishDate { get; set; }
-        public string ID { get; set; }
+        public  SystemProperties sys { get; set; }
     }
 }

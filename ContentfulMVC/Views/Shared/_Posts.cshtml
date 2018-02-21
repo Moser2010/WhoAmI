@@ -7,18 +7,19 @@
     {
         @if (post.Title != null)
         {
-            @Html.ActionLink("link text", "SinglePost", "Posts", new { id = @post.ID }, null)
+            
             <div class="item">
-                <a asp-controller="Posts" asp-action="SinglePost">
+                <a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">
                     <img class="masonryImage" src="@post.FeaturedImage.File.Url" />
                 </a>
                 
                 <div class="content">
-                    <a asp-controller="Posts" asp-action="SinglePost">
-                        <h2>@post.Title</h2>
+                    <a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">
+                        <h2>@post.Title </h2>
+                        
                     </a>
                     <hr />
-                    <p>@post.Content.Substring(0, 120)<a href="">...More</a></p>
+                    <p>@post.Content.Substring(0, 120)<a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">...More</a></p>
                     <div class="publications">
                         <p id="Author">By <a asp-action="About" asp-controller="Home">@post.Author.FullName</a></p>
                         <p id="PublishDate">@post.PublishDate</p>
