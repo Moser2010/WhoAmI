@@ -1,9 +1,10 @@
-﻿@model IEnumerable<ContentfulMVC.Models.Posts>
+﻿
             </div>
         </div>
     </div>
 </section>
 <footer>
+@model MetaData
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 col-md-4 col-lg-4">
@@ -12,16 +13,16 @@
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <h4>Recent Posts</h4>
                 <div class="footerPostList">
-                    @{ var i = 0;}
-                    @foreach (var post in Model)
+                    <!--{ var i = 0;}
+                    foreach (var post in Model)
                     {
                         if (i <= 10)
                         {
                             i++;
-                        <p><a href="#">@post.Title</a></p>
-                    }
+                            <p><a href="#">post.Title</a></p>
+                        }
 
-                }
+                    }-->
                 </div>
             </div>
             <div class="col-sm-12 col-md-4 col-lg-4">
