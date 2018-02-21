@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ContentfulMVC.Models.Post>
+﻿@model Posts
 
 @{
     ViewData["Title"] = "SinglePost";
@@ -12,10 +12,7 @@
    Sliding Image Gallery with hidden overflow
 </div>
 <div class="row">
-@foreach (var post in Model)
-{ 
-    <h1>@post.Title</h1>
-    }
+    <h1>@Model.Title</h1>
 </div>
 <div class="row">
     comments section using disqus!
