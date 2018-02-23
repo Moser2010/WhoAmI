@@ -40,12 +40,12 @@
         }
 
         .img1 {
-            background: url("http://www.devvoyages.com/images/slide5.jpg");
+            background: url("https://www.devvoyages.com/images/slide5.jpg");
             background-size: cover;
             background-position: center;
 
             &:hover {
-                background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url("http://www.devvoyages.com/images/slide5.jpg");
+                background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3)), url("https://www.devvoyages.com/images/slide5.jpg");
                 background-size: cover;
                 background-position: center;
                 transition: 3s;
