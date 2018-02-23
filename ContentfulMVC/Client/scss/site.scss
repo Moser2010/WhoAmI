@@ -1,4 +1,4 @@
-﻿
+﻿@import "horizontalGallery.scss";
 $primaryColor: white;
 $accentColor: #18C596;
 $border: solid $accentColor;
@@ -424,6 +424,11 @@ footer {
     &:hover {
         .content {
             height: 100%;
+            a{
+                h2{
+                    color:$accentColor !important;
+                }
+            }
         }
 
         background-size: contain !important;
@@ -543,4 +548,12 @@ footer {
             padding:0 20px;
         }
     }
+}
+
+
+
+
+
+.comments {
+    margin:0 auto;
 }
