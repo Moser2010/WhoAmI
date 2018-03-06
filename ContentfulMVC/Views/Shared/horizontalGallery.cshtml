@@ -1,8 +1,9 @@
-﻿<div class="row" style="margin:0px;">
+﻿@model Posts
+<div class="row" style="margin:0px;">
     <div class="hgContainer">
         <!--Each image will go here.
         You could use divs of list hgItems li  -->
-        <div class="hgItem img1">
+        <div class="hgItem img1" style="background-image:url('@Model.galleryOfPhotos.First().File.Url');">
             <div>
                 <h1 class="content">Title</h1>
                 <p class="content">
