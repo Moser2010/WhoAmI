@@ -14,6 +14,6 @@ namespace ContentfulMVC.Models
         public Author Author { get; set; }
         public string PublishDate { get; set; }
         public SystemProperties sys { get; set; }
-        //public Array galleryOfPhotos { get; set; }
+        public List<Asset> galleryOfPhotos { get; set; }
     }
 }

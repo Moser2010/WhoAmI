@@ -26,6 +26,7 @@ namespace ContentfulMVC.Controllers
         public async Task<IActionResult> SinglePost(string id)
         {
             var post = await _client.GetEntryAsync<Posts>(id);
+            var assets = await _client.GetAssetsAsync();
             return View(post);
         }
     }
