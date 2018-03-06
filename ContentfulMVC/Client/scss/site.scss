@@ -1,8 +1,17 @@
-﻿@import "horizontalGallery.scss";
+﻿//Variables
 $primaryColor: white;
 $accentColor: #18C596;
 $border: solid $accentColor;
 $borderRadius: 3px;
+@mixin hzh1 {
+        font-size: 5em;
+        color: $primaryColor;
+        margin-top: 125px;
+}
+
+//Imports
+@import "horizontalGallery.scss";
+
 
 html, body {
     height: 100%;

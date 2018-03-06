@@ -3,27 +3,39 @@
     <div class="hgContainer">
         <!--Each image will go here.
         You could use divs of list hgItems li  -->
-        @if ( @Model.galleryOfPhotos == null)
+
+        @if (@Model.galleryOfPhotos == null)
         {
             <div class="hgItem" style="background-image:url('@Model.FeaturedImage.File.Url');background-size:cover;">
-                
+
+                <h1 style="writing-mode:vertical-rl">@Model.Title</h1>
+
             </div>
+
 
         }
         else
         {
-        @foreach (var img in @Model.galleryOfPhotos)
-        {
-
-            <div class="hgItem img1" style="background-image:url('@img.File.Url');">
-                <div>
-                    <h1 class="content">@img.Title</h1>
-                    <p class="content">
-                        @img.Description
-                    </p>
-                </div>
+            <div class="hgFeatured col-lg-1 col-md-1 col-sm-1 col-xs-1" style="background:linear-gradient(to right, rgba(0,0,0,.5),rgba(255,255,255,0)),url('@Model.FeaturedImage.File.Url');background-size:cover;">
+                <h1 style="writing-mode:vertical-rl">@Model.Title</h1>
             </div>
-        }
+            
+                @foreach (var img in @Model.galleryOfPhotos)
+                {
+
+                    <div class="hgItem" style="background-image:url('@img.File.Url');">
+                        <div class="row">
+                            <div class="hgContentWrapper">
+                                <h1 class="content">@img.Title</h1>
+                                <p class="content">
+                                    @img.Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+            
         }
     </div>
 </div>

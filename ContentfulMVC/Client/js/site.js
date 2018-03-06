@@ -70,3 +70,9 @@ function getRandomIntInclusive(min, max) {
 window.onload = function () { masonry(".grid", ".item", ".masonryImage", 10, 4, 3, 1); }
 
 //End:    Vertical Posts Gallery
+
+//Start: Horizontal Gallery Display function
+
+('document').click(function () {
+console.log("hello world")
+})
