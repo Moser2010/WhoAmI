@@ -1,6 +1,5 @@
 ﻿
 @await Component.InvokeAsync("Header")
-@Html.Partial("_TopMain")
 @Html.Partial("Wrapper")
 <h3>To Do List</h3>
 <ol>
@@ -10,10 +9,9 @@
     <li>Fix the post publication Date</li>
     <li>Fix the order of the posts so they are viewed from newst to oldest horizontally</li>
     <li>Add functionality to be able to see recent posts and featured Posts(could do this with a toggle or if there is a better way then do that)</li>
-    
+
 </ol>
 <h2>Featured Posts</h2>
 @await Html.PartialAsync("../Shared/_Posts.cshtml");
-@await  Component.InvokeAsync("Footer")
 
 

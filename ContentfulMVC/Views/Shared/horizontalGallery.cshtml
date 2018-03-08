@@ -6,7 +6,7 @@
 
         @if (@Model.galleryOfPhotos == null)
         {
-            <div class="hgItem" style="background-image:url('@Model.FeaturedImage.File.Url');background-size:cover;">
+            <div class="hgItem" style="background-image:linear-gradient(to right, rgba(0,0,0,.3),rgba(0,0,0,0)),url('@Model.FeaturedImage.File.Url');background-size:cover;">
 
                 <h1 style="writing-mode:vertical-rl">@Model.Title</h1>
 

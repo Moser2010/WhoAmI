@@ -26,7 +26,11 @@ html, body {
 }
 
 body {
-
+    aside{
+        h3{
+            margin:0px;
+        }
+    }
     #socialBar {
         background: $primaryColor;
         border-bottom: $border 5px;

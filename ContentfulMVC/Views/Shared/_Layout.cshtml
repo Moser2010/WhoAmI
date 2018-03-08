@@ -12,12 +12,10 @@
 </head>
 <body>
     
-    <!--<div class="container body-content">-->
+    @await Component.InvokeAsync("Nav")
+    @await  Html.PartialAsync("../Shared/_featuredBar.cshtml")
     @RenderBody()
-    <!--<footer>
-        <p>&copy; 2017 - Lunch</p>
-    </footer>
-    </div>-->
+@await Component.InvokeAsync("Footer")
 
     <environment include="Development">
         <script src="~/js/main.js" asp-append-version="true"></script>

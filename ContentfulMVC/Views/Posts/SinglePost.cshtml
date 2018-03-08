@@ -5,31 +5,31 @@
 }
 
 
-@await Component.InvokeAsync("Nav")
-@Html.Partial("_TopMain")
+
 @await Html.PartialAsync("horizontalGallery");
 @Html.Partial("Wrapper")
 <div class="row">
     <div class="row">
         <h1>@Model.Title</h1>
+
+
+        <div class="col-lg-9">
+            <p>
+                @Model.Content
+            </p>
+        </div>
+        <div class="col-lg-3">
+            <aside style="text-align:right;">
+                <h3 style="text-align:center;">Recent Posts</h3>
+                @await Component.InvokeAsync("PostList")
+            </aside>
+        </div>
+
     </div>
-    
-    <div class="col-lg-9">
-        <p>
-            @Model.Content
-    </p>
-    </div>
-    <div class="col-lg-3">
-        <aside style="text-align:right;">
-            @await Component.InvokeAsync("PostList")
-        </aside>
-    </div>
-    
 </div>
 <div class="row">
     <div class="col-lg-12 comments">
         comments section using disqus!
     </div>
-    
+
 </div>
-@await Component.InvokeAsync("Footer")

@@ -1,7 +1,5 @@
 ﻿
 
-@await Component.InvokeAsync("Nav")
-
 <div class="container-fluid">
     <header>
         <contentful-image asset-id="home" />
@@ -44,3 +42,4 @@
         </div>
     </header>
 </div>
+@await Html.PartialAsync("../../_featuredBar.cshtml")
