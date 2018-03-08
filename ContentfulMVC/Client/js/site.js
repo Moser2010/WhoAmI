@@ -73,6 +73,13 @@ window.onload = function () { masonry(".grid", ".item", ".masonryImage", 10, 4, 
 
 //Start: Horizontal Gallery Display function
 
-('document').click(function () {
-console.log("hello world")
-})
+var img = document.querySelectorAll('.hgItem');
+//var ctWrapper = document.querySelectorAll('');
+for (var i = 0; i < img.length; i++) {
+    img[i].addEventListener("mouseenter", function () {
+        console.log(this.getElementsByClassName("hgContentWrapper")[0].style = "display:block !important;")
+    })
+    img[i].addEventListener("mouseleave", function () {
+        console.log(this.getElementsByClassName("hgContentWrapper")[0].style = "display:none !important;")
+    })
+}

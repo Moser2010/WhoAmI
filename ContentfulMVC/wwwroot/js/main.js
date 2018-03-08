@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "df0a194b1eb58995b7ba"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0991f056e3048add2ebc"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -3025,9 +3025,16 @@ window.onload = function () { masonry(".grid", ".item", ".masonryImage", 10, 4, 
 
 //Start: Horizontal Gallery Display function
 
-('document').click(function () {
-console.log("hello world")
-})
+var img = document.querySelectorAll('.hgItem');
+//var ctWrapper = document.querySelectorAll('');
+for (var i = 0; i < img.length; i++) {
+    img[i].addEventListener("mouseenter", function () {
+        console.log(this.getElementsByClassName("hgContentWrapper")[0].style = "display:block !important;")
+    })
+    img[i].addEventListener("mouseleave", function () {
+        console.log(this.getElementsByClassName("hgContentWrapper")[0].style = "display:none !important;")
+    })
+}
 
 /***/ })
 /******/ ]);
