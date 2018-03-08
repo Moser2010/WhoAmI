@@ -18,7 +18,7 @@
                         
                     </a>
                     <hr />
-                    <p>@post.Content.Substring(0, 120)<a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">...More</a></p>
+                    <p class="contentfulContent">@post.Content.Substring(0, 120)<a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">...More</a></p>
                     <div class="publications">
                         <p id="Author">By <a asp-action="About" asp-controller="Home">@post.Author.FullName</a></p>
                         <p id="PublishDate">@post.PublishDate</p>

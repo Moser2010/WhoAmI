@@ -441,6 +441,10 @@ footer {
                     color:$accentColor !important;
                 }
             }
+            .publications{
+                position:absolute;
+                bottom:0;
+            }
         }
 
         background-size: contain !important;
@@ -475,6 +479,7 @@ footer {
             width: 100%;
             text-align: left;
             margin-top: 15px;
+            
 
             p {
                 display: inline;
