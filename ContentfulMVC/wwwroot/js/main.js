@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "0991f056e3048add2ebc"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b2e3278b2301d4abf13f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -3057,7 +3057,7 @@ for (var i = 0; i < img.length; i++) {
 ﻿
 
 var markdown = __webpack_require__(6).markdown;
-var mdContent = document.getElementById("ContentfulContent");
+var mdContent = document.getElementById("contentfulContent");
 
 var contentfulContent = markdown.toHTML(mdContent.innerHTML)
 console.log(mdContent)

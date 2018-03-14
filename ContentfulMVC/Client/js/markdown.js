@@ -1,7 +1,7 @@
 ﻿import "../../node_modules/markdown/";
 
 var markdown = require("markdown").markdown;
-var mdContent = document.getElementById("ContentfulContent");
+var mdContent = document.getElementById("contentfulContent");
 
 var contentfulContent = markdown.toHTML(mdContent.innerHTML)
 console.log(mdContent)

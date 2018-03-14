@@ -15,5 +15,6 @@ namespace ContentfulMVC.Models
         public string PublishDate { get; set; }
         public SystemProperties sys { get; set; }
         public List<Asset> galleryOfPhotos { get; set; }
+        public bool featuredPost { get; set; }
     }
 }
