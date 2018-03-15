@@ -15,7 +15,9 @@ $borderRadius: 3px;
 
 html, body {
     height: 100%;
-
+    #canvas {
+        overflow:hidden;
+    }
     .grid-item {
         width: 200px;
     }
