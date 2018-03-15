@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<ContentfulMVC.Models.Posts>;
 
 
-<div class="grid">
+<div id="grid" class="grid">
     @foreach (var post in Model)
     {
         @if (post.featuredPost == true)

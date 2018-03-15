@@ -2,11 +2,11 @@
 
 var markdown = require("markdown").markdown;
 var mdContent = document.getElementById("contentfulContent");
+if (mdContent != null) {
+    var contentfulContent = markdown.toHTML(mdContent.innerHTML)
+    mdContent.innerHTML = contentfulContent
+}
 
-var contentfulContent = markdown.toHTML(mdContent.innerHTML)
-console.log(mdContent)
-console.log(contentfulContent)
-mdContent.innerHTML = contentfulContent
 
 
 //make a for loop

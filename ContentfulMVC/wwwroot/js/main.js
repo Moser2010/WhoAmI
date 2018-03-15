@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "171cf152b4a789d3154a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "188810966dbd955d9534"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -77473,7 +77473,6 @@ window.addEventListener('scroll', function (e) {
 //Start:    Vertical Posts Gallery
 
 function masonry(container, items, images, spacing, dCol, tCol, mCol) {
-    console.log("Started image sizing")
     //selects the following classes from the the DOM.
     var g = document.querySelector(container),
         //The below returns an array
@@ -77502,22 +77501,16 @@ function masonry(container, items, images, spacing, dCol, tCol, mCol) {
     }
 }
 
-["resize", "load"].forEach(function (event) {
-    window.addEventListener(event, function () {
-        imagesLoaded(document.querySelector(container), function () {
-            // A maonsry grid with 8px gutter, with 3 columns on desktop, 2 on tablet, and 1 column on mobile devices.
 
-
-        });
-    });
-});
 
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive
 }
-window.onload = function () { masonry(".grid", ".item", ".masonryImage", 10, 4, 3, 1); }
+window.onload = function () {
+    var grid = document.getElementById("grid");
+    if (grid != null) { masonry(".grid", ".item", ".masonryImage", 10, 4, 3, 1); }}
 
 //End:    Vertical Posts Gallery
 
@@ -77527,10 +77520,10 @@ var img = document.querySelectorAll('.hgItem');
 //var ctWrapper = document.querySelectorAll('');
 for (var i = 0; i < img.length; i++) {
     img[i].addEventListener("mouseenter", function () {
-        console.log(this.getElementsByClassName("hgContentWrapper")[0].style = "display:block !important;")
+       this.getElementsByClassName("hgContentWrapper")[0].style = "display:block !important;"
     })
     img[i].addEventListener("mouseleave", function () {
-        console.log(this.getElementsByClassName("hgContentWrapper")[0].style = "display:none !important;")
+        this.getElementsByClassName("hgContentWrapper")[0].style = "display:none !important;"
     })
 }
 
@@ -77545,11 +77538,11 @@ for (var i = 0; i < img.length; i++) {
 
 var markdown = __webpack_require__(7).markdown;
 var mdContent = document.getElementById("contentfulContent");
+if (mdContent != null) {
+    var contentfulContent = markdown.toHTML(mdContent.innerHTML)
+    mdContent.innerHTML = contentfulContent
+}
 
-var contentfulContent = markdown.toHTML(mdContent.innerHTML)
-console.log(mdContent)
-console.log(contentfulContent)
-mdContent.innerHTML = contentfulContent
 
 
 //make a for loop
@@ -80123,23 +80116,31 @@ if (typeof Object.create === 'function') {
 
 
 
+var canvas = document.getElementById("canvas");
 
+    console.log(canvas);
+    var song;
+    function preload() {
+        console.log("We got here");
+        song = loadSound("https://chenyiya.com/codepen/deorro.mp3");
+    }
 
+    function setup() {
+        createCanvas(200, 200);
+        song.play();
+    }
 
-var song;
-function preload() {
-    console.log("We got here");
-    song = loadSound("https://chenyiya.com/codepen/deorro.mp3");
+    function draw() {
+        background(0);
 }
 
-function setup() {
-    createCanvas(200, 200);
-    song.play();
+if (canvas !== null) {
+    preload();
+    setup();
+    draw();
 }
 
-function draw() {
-    background(0);
-}
+
 
 /***/ }),
 /* 43 */
