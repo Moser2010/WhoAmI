@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e43c19f12e8073d3c0d4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b85ed4a2dae80447fc7a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -80114,6 +80114,44 @@ if (typeof Object.create === 'function') {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_p5_lib_addons_p5_sound___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__node_modules_p5_lib_addons_p5_sound__);
 ﻿
 
+
+
+var song;
+var amp;
+
+document.getElementById("audiofile").onchange = function (event) {
+    if (event.target.files[0]) {
+        // Load our new song
+        song = __WEBPACK_IMPORTED_MODULE_0__node_modules_p5_lib_p5___default.a.loadSound(URL.createObjectURL(event.target.files[0]));
+    }
+};
+
+function preload() {
+
+}
+function setup() {
+    var myCanvas = __WEBPACK_IMPORTED_MODULE_0__node_modules_p5_lib_p5___default.a.createCanvas(windowWidth, windowHeight);
+    myCanvas.parent("canvas");
+}
+
+function draw() {
+    __WEBPACK_IMPORTED_MODULE_0__node_modules_p5_lib_p5___default.a.background(50);
+
+    if (typeof song !== "undefined" && song.isLoaded() && !song.isPlaying()) {
+        // Do once
+
+        song.p5.setVolume(0.5);
+        song.p5.play();
+        amp = new __WEBPACK_IMPORTED_MODULE_0__node_modules_p5_lib_p5___default.a.Amplitude();
+    }
+
+    if (typeof amp !== "undefined") {
+        var vol = amp.p5.getLevel();
+        var diam = __WEBPACK_IMPORTED_MODULE_0__node_modules_p5_lib_p5___default.a.map(vol, 0, 0.3, 10, 200);
+        __WEBPACK_IMPORTED_MODULE_0__node_modules_p5_lib_p5___default.a.fill(255, 0, 255);
+        __WEBPACK_IMPORTED_MODULE_0__node_modules_p5_lib_p5___default.a.ellipse(width / 2, height / 2, diam, diam);
+    }
+}
 
 
 
