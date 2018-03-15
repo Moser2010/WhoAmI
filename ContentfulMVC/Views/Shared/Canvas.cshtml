@@ -1,3 +1,44 @@
 ﻿<input id="audiofile" type="file" />
 <div id="canvas"></div>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+<script>
+    var song;
+    var amp;
 
+    document.getElementById("audiofile").onchange = function (event) {
+        if (event.target.files[0]) {
+            // Load our new song
+            song = loadSound(URL.createObjectURL(event.target.files[0]));
+        }
+    };
+
+    function preload() {
+
+    }
+    function setup() {
+        var myCanvas = createCanvas(windowWidth, windowHeight);
+        myCanvas.parent("canvas");
+    }
+
+    function draw() {
+        background(50);
+
+        if (typeof song != "undefined" && song.isLoaded() && !song.isPlaying()) {
+            // Do once
+            console.log("we got here")
+            song.setVolume(0.5);
+            song.play();
+            amp = new p5.Amplitude();
+        }
+
+        if (typeof amp != "undefined") {
+            var vol = amp.getLevel();
+            var diam = map(vol, 0, 0.3, 10, 200);
+            fill(255, 0, 255);
+            ellipse(width / 2, height / 2, diam, diam);
+        }
+    }
+
+</script>-->
