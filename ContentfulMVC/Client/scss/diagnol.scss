@@ -1,0 +1,161 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+
+    #container {
+        width: 100%;
+        height: 100vh;
+
+        h1 {
+            z-index: 1;
+            font-size: 3em;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        p {
+            color: white;
+        }
+
+        #col1 {
+            transition: 2s;
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            clip-path: polygon(0% 100%, 77% 100%, 0% -64%);
+            float: left;
+
+            h1 {
+                max-width: 450px;
+                text-align: right;
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                margin: 35px;
+            }
+
+            .content1 {
+                transition: 2s;
+                overflow: hidden;
+                max-width: 0%;
+                float: left;
+                height: 100%;
+                background-size: cover !important;
+
+                #title1 {
+                    min-width: 80vw;
+
+                    h2 {
+                        max-width: 60%;
+                        float: left;
+                        color: white;
+                        opacity: 0;
+                        
+                        margin: 10px;
+                        padding: 10px;
+                        text-align: center;
+                        margin: 50vh auto;
+                        width: 100%;
+                        font-size: 5em;
+                    }
+                }
+            }
+
+
+            &:hover {
+                clip-path: polygon(0% 100%, 77% 100%, 0% -300%);
+                transition: 2s;
+                z-index: 2;
+
+                h1 {
+                    transition: 1s;
+                    opacity: 0;
+                }
+
+                .content1 {
+                    z-index: 10;
+                    max-width: 80%;
+                    transition: max-width 2s;
+
+                    #title1 {
+                        h2 {
+                            transition: 5s;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        #col2 {
+            transition: 2s;
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-repeat: none;
+            background-size: 100% 100%;
+            float: right;
+            clip-path: polygon(100% 150%, 100% 0%, 30% 0%);
+
+            h1 {
+                max-width: 450px;
+                text-align: right;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                margin: 35px;
+            }
+
+            .content2 {
+                transition: 2s;
+                overflow: hidden;
+                max-width: 0%;
+                float: right;
+                height: 100%;
+                background-size: cover !important;
+
+                #title2 {
+                    min-width: 80vw;
+
+                    h2 {
+                        max-width: 60%;
+                       
+                        color: white;
+                        opacity: 0;
+                        margin: 10px;
+                        padding: 10px;
+                        text-align: center;
+                        margin: 50vh auto;
+                        width: 100%;
+                        font-size: 5em;
+                    }
+                }
+            }
+
+            &:hover {
+                clip-path: polygon(100% 300%, 100% 0%, 30% 0%);
+                z-index: 2;
+                transition: 2s;
+
+                h1 {
+                    transition: 1s;
+                    opacity: 0;
+                }
+
+                .content2 {
+                    z-index: 10;
+                    max-width: 70%;
+                    transition: max-width 2s;
+
+                    #title2 {
+                        h2 {
+                            transition: 5s;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
