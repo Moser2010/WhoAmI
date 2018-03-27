@@ -25,12 +25,6 @@ namespace ContentfulMVC.Controllers
             return View(allPosts);
         }
 
-        public async Task<IActionResult> About()
-        {
-            var allPosts = await _client.GetEntriesAsync<Posts>();
-            return View("About",allPosts);
-        }
-
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

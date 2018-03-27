@@ -21,18 +21,18 @@ namespace ContentfulMVC.Controllers
         public async Task<IActionResult> Index()
         {
             //var qb = QueryBuilder<Posts>.New.FieldEquals(f => f.sys.Id, id);
-            var allPosts = await _client.GetEntriesAsync<Posts>();
-            return View("Index", allPosts);
+            var author = await _client.GetEntryAsync<Author>("56WvqVr1oIOGqScqoY6EYK");
+            return View("Index", author);
         }
         public async Task<IActionResult> WhoIAm()
         {
-            var allPosts = await _client.GetEntriesAsync<Posts>();
-            return View("WhoIAm");
+            var author = await _client.GetEntryAsync<Author>("56WvqVr1oIOGqScqoY6EYK");
+            return View("WhoIAm", author);
         }
         public async Task<IActionResult> WhatIDo()
         {
-            var allPosts = await _client.GetEntriesAsync<Posts>();
-            return View("WhatIDo");
+            var author = await _client.GetEntryAsync<Author>("56WvqVr1oIOGqScqoY6EYK");
+            return View("WhatIDo", author);
         }
         public IActionResult Error()
         {
