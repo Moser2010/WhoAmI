@@ -14,6 +14,10 @@ namespace ContentfulMVC.Models
         public string FullName { get; set; }
         public string Bio { get; set; }
         public string Website { get; set; }
+        public List<string> Skills { get; set; }
+        public string Experience { get; set; }
+        public List<string> Hobbies { get; set; }
+        public string Backstory { get; set; }
         //public Asset Avatar { get; set; }
     }
 }

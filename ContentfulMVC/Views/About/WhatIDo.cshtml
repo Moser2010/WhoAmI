@@ -1,42 +1,72 @@
 ﻿@model Author
 @Html.Partial("Canvas")
 @Html.Partial("Wrapper")
-    <div id="widMe"style="background:url('https://d176426ph7tchi.cloudfront.net/photos/SNOWBOARDING/hero/hero-snowboarding-3.jpg');background-size:cover; width:100%;height:80vh;background-attachment: fixed !important;">
-        <div class="row">
-            <div id="widTitle" class="col-sm-12 col-md-12 col-lg-12">
-                <h1>I am a Front end developer</h1>
+
+<div id="widMe" style="background:linear-gradient(rgba(128, 128, 128,0.2),rgba(128, 128, 128,0.2)),url('https://d176426ph7tchi.cloudfront.net/photos/SNOWBOARDING/hero/hero-snowboarding-3.jpg');background-size:cover; width:100%;height:80vh;background-attachment: fixed !important;">
+
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="widContent">
+                <h3>About Me</h3>
+                <hr />
+                <p class="contentfulContent">@Model.Experience</p>
             </div>
+
         </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="widContent">
-                    <h3>About Me</h3>
-                    <p id="contentfulContent">@Model.Bio</p>
-                </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <h3 id="widTyper">What I Do</h3>
+            <div id="stuff">
 
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="widContent">
-                    <h3>What I Do</h3>
-                    <p>Paragraph goes here</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="widContent">
-                    <h3>Skills</h3>
-                    <p>Paragraph goes here</p>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="widContent">
+                <h3>Skills</h3>
+                <hr />
+                <div class="row" style="padding:0;">
+
+                    @foreach (string skill in Model.Skills)
+                    {
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            @{int i = 0; }
+                            @if (i <= Model.Skills.Count / 2)
+                            {
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <ul>
+                                        <li>@skill</li>
+                                    </ul>
+                                </div>
+                                i++;
+                            }
+                            else
+                            {
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <ul>
+                                        <li>@skill</li>
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                    }
                 </div>
             </div>
         </div>
     </div>
+</div>
 <h1 id="widProjects">Published Projects</h1>
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-right:0;">
-            <img class="hImage" src="http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg" />
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-left:0;">
-            <img class="hImage" src="http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg" />
-        </div>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-right:0;">
+        <img class="hImage" src="http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg" />
     </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-left:0;">
+        <img class="hImage" src="http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg" />
+    </div>
+</div>
+    <h2>What is left to do on this page</h2>
+    <ul>
+        <li>Add your two project images via the image api</li>
+        <li>Style them</li>
+        <li>Add a typeing code thing that lists out Front End Developer, UX, UI, Website Builder, Designer</li>
+    </ul>
 
 
