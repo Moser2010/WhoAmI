@@ -8,6 +8,7 @@ using ContentfulMVC.Models;
 using Contentful.Core;
 using Contentful.Core.Models;
 using Contentful.Core.Search;
+using ContentfulMVC.Models.ViewModels;
 
 namespace ContentfulMVC.Controllers
 {
@@ -26,11 +27,13 @@ namespace ContentfulMVC.Controllers
         }
         public async Task<IActionResult> WhoIAm()
         {
+            AuthorAndImages AAI = new AuthorAndImages();
             var author = await _client.GetEntry<Author>("56WvqVr1oIOGqScqoY6EYK");
-            return View("WhoIAm", author);
+            return View("WhoIAm", AAI);
         }
         public async Task<IActionResult> WhatIDo()
         {
+            
             var author = await _client.GetEntry<Author>("56WvqVr1oIOGqScqoY6EYK");
             return View("WhatIDo", author);
         }
