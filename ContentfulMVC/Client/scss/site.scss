@@ -31,6 +31,10 @@ html, body {
 }
 
 body {
+    #stuff {
+        color:$primaryColor;
+        text-align:center;
+    }
     aside{
         h3{
             margin:0px;

@@ -76,3 +76,74 @@ for (var i = 0; i < img.length; i++) {
         this.getElementsByClassName("hgContentWrapper")[0].style = "display:none !important;"
     })
 }
+
+//Typer
+//Disclaimer. This is not my code and I do not claim to have built this. I do understand the concept behind this and have built similar things in the past but I didn't have time to build my own. Original code for this belongs to https://codepen.io/siebevd/
+let words = [
+    "UX/UI Developer",
+    "Front-End Devloper",
+    "Web Designer",
+    "Web Developer"
+    
+];
+let text = document.getElementById("stuff");
+let cStep = 0,
+    oWord = "";
+
+setTimeout(changeWord, 1000);
+
+function changeWord() {
+    oWord = text.innerHTML;
+
+    // check if there is a word atm or not
+    if (oWord.length < 1) {
+
+        if (cStep !== words.length - 1) {
+            cStep++;
+        } else {
+            cStep = 0;
+        }
+        addNextWord();
+    } else {
+        setTimeout(deleteWord, 2000);
+    }
+
+};
+
+function deleteWord() {
+    var WordLength = oWord.length,
+        cWord = text.innerHTML,
+        cLength = cWord.length;
+
+
+    // The word is deleted so, start adding in the new one
+    if (cLength < 1) {
+        changeWord();
+        return;
+    }
+
+    // Remove a charachter
+    text.innerHTML = cWord.substring(0, cLength - 1);
+
+    setTimeout(deleteWord, 200);
+}
+
+function addNextWord() {
+    var cWord = text.innerHTML,
+        cLength = cWord.length,
+        nextWord = words[cStep],
+        nextWordLength = nextWord.length;
+
+
+    if (cLength === nextWordLength) {
+        changeWord();
+        return;
+    }
+
+    // add a charachter
+    text.innerHTML = nextWord.substring(0, cLength + 1);
+
+    setTimeout(addNextWord, 200);
+
+
+}
