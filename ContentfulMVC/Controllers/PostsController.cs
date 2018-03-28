@@ -20,13 +20,13 @@ namespace ContentfulMVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var allPosts = await _client.GetEntriesAsync<Posts>();
+            var allPosts = await _client.GetEntries<Posts>();
             return View(allPosts);
         }
         public async Task<IActionResult> SinglePost(string id)
         {
             var qb = QueryBuilder<Posts>.New.FieldEquals(f => f.sys.Id, id);
-            var post = (await _client.GetEntriesAsync(qb)).FirstOrDefault();
+            var post = (await _client.GetEntries(qb)).FirstOrDefault();
             //var post = await _client.GetEntryAsync<Posts>(id);
             //var assets = await _client.GetAssetsAsync();
             return View(post);

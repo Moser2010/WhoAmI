@@ -21,7 +21,7 @@ namespace ContentfulMVC.ViewComponents
         {
             //I dont fully understand the next two lines. I kinda understand what they are asking for but not fully!
             var qb = QueryBuilder<MetaData>.New.FieldEquals("sys.id", "3A1FviHKNy6IQqSAq4UocQ");
-            var home = (await _client.GetEntriesAsync<MetaData>(qb)).FirstOrDefault();
+            var home = (await _client.GetEntries<MetaData>(qb)).FirstOrDefault();
             return View(home);
         }
        

@@ -19,7 +19,7 @@ namespace ContentfulMVC.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
            
-            var posts = await _client.GetEntriesAsync<Posts>();
+            var posts = await _client.GetEntries<Posts>();
             return View(posts);
         }
     }
