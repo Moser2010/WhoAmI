@@ -27,8 +27,9 @@ namespace ContentfulMVC.Controllers
         }
         public async Task<IActionResult> WhoIAm()
         {
-            AuthorAndImages AAI = new AuthorAndImages();
-            var author = await _client.GetEntry<Author>("56WvqVr1oIOGqScqoY6EYK");
+            WhoIAm AAI = new WhoIAm();
+            AAI.Author = await _client.GetEntry<Author>("56WvqVr1oIOGqScqoY6EYK");
+            var Assets = await _client.GetAssets();
             return View("WhoIAm", AAI);
         }
         public async Task<IActionResult> WhatIDo()

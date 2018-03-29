@@ -1,4 +1,4 @@
-﻿@model ContentfulMVC.Models.ViewModels.AuthorAndImages
+﻿@model ContentfulMVC.Models.ViewModels.WhoIAm
 <div id="wiaHeader" style="background:url('http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg');background-size:cover;">
 
 </div>
@@ -6,16 +6,17 @@
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:0;">
         <img class="hImage" src="http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg" />
+        <img class="hImage" src="@Model.Assets.File.URL" />
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <h1>About Me</h1>
-        <p class="contentfulContent">@Model.Bio</p>
+        <p class="contentfulContent">@Model.Author.Bio</p>
     </div>
 </div>
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <h1>History</h1>
-        <p class="contentfulContent">@Model.Backstory</p>
+        <p class="contentfulContent">@Model.Author.Backstory</p>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:0;">
         <img class="hImage" src="http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg" />
@@ -30,10 +31,10 @@
     </div>
     <div id="wiaHobbies" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <h1>Things I Enjoy Doing</h1>
-        @foreach(string hobbie in Model.Hobbies)
+        @foreach(string hobbie in Model.Author.Hobbies)
         {
             int i = 0;
-            if (i <= Model.Hobbies.Count / 2)
+            if (i <= Model.Author.Hobbies.Count / 2)
             {
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <ul>
@@ -46,7 +47,7 @@
             {
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <ul>
-                        <li>hobbie</li>
+                        <li>@hobbie</li>
                     </ul>
                 </div>
 
