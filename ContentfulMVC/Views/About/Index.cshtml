@@ -1,18 +1,18 @@
-﻿
+﻿@model ContentfulMVC.Models.ViewModels.WhoIAm
 <div id="container">
-    <div id="col1" style="background: url('https://images7.alphacoders.com/491/thumb-1920-491669.jpg');
+    <div id="col1" style="background: url('@Model.Pages.Image1.File.Url');
             background-size: cover;">
         <a asp-action="WhoIAm" asp-controller="About">
-            <div class='content1' style="background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://orig00.deviantart.net/4ad1/f/2014/072/c/6/diablo_3_fanart___crusader_by_m_hugo-d7a3ush.jpg')">
+            <div class='content1' style="background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('@Model.Pages.FeaturedImage.File.Url')">
                 <div id="title1">
                     <h2>Who I Am</h2>
                 </div>
             </div>
         </a>
     </div>
-    <div id="col2" style="background: url('http://entirepartykilled.com/wp-content/uploads/2016/06/Earthshaker-wars.jpg');background-size: cover;">
+    <div id="col2" style="background: url('@Model.Portfolio.FeaturedImage.File.Url');background-size: cover;">
         <a asp-action="WhatIDo" asp-controller="About">
-            <div class='content2' style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://orig00.deviantart.net/4ad1/f/2014/072/c/6/diablo_3_fanart___crusader_by_m_hugo-d7a3ush.jpg');">
+            <div class='content2' style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.imgur.com/vZHx7YB.jpg');">
                 <div id="title2">
                     <h2>What I Do</h2>
                 </div>
@@ -20,6 +20,7 @@
         </a>
     </div>
 </div>
+
 
 
 you will need to use the Image API in order to pull these images they way that you want to.

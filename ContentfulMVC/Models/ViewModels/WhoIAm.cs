@@ -12,6 +12,7 @@ namespace ContentfulMVC.Models.ViewModels
     public class WhoIAm
     {
         public Author Author { get; set; }
-        public List<Asset> Assets { get; set; }
+        public Pages Pages { get; set; }
+        public Portfolio Portfolio { get; set; }
     }
 }
