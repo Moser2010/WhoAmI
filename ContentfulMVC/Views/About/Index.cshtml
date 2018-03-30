@@ -1,6 +1,6 @@
 ﻿@model ContentfulMVC.Models.ViewModels.WhoIAm
 <div id="container">
-    <div id="col1" style="background: url('@Model.Pages.Image1.File.Url');
+    <div id="col1" style="background: url('@Model.Pages.Image2.File.Url');
             background-size: cover;">
         <a asp-action="WhoIAm" asp-controller="About">
             <div class='content1' style="background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('@Model.Pages.FeaturedImage.File.Url')">
@@ -20,7 +20,3 @@
         </a>
     </div>
 </div>
-
-
-
-you will need to use the Image API in order to pull these images they way that you want to.

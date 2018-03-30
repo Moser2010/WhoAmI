@@ -53,11 +53,14 @@
     </div>
 </div>
 <h1 id="widProjects">Published Projects</h1>
-<div class="row">
+<div id="widProDetails" class="row" style="margin:0;">
     @foreach (var project in Model.Portfolio.PublishedProjects)
     {
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-right:0;">
-            <img class="hImage" src="@project.File.Url" />
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 project" style="height:500px;padding:0;background:url(@project.File.Url);background-size:cover;">
+            <div>
+                <h3>@project.Title</h3>
+                <p>@project.Description</p>
+            </div>
         </div>
 
     }
@@ -91,11 +94,5 @@
         </iframe>
     </div>
 </div>
-<h2>What is left to do on this page</h2>
-<ul>
-    <li>Add your two project images via the image api</li>
-    <li>Style them</li>
-    <li>Add a typeing code thing that lists out Front End Developer, UX, UI, Website Builder, Designer</li>
-</ul>
 
 

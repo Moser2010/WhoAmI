@@ -8,6 +8,7 @@ namespace ContentfulMVC.Models
 {
     public class Pages
     {
+        public string PageTitle { get; set; }
         public Asset FeaturedImage { get; set; }
         public Asset Image1 { get; set; }
         public Asset Image2 { get; set; }

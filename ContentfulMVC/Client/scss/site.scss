@@ -31,6 +31,7 @@ html, body {
 }
 
 body {
+    
     #stuff {
         color:$primaryColor;
         text-align:center;
@@ -499,7 +500,7 @@ footer {
             }
 
             #PublishDate {
-                float: right;
+                float: left;
             }
         }
     }

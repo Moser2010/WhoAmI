@@ -20,8 +20,14 @@
                     <hr />
                     <p>@post.Content.Substring(0, 120)<a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">...More</a></p>
                     <div class="publications">
-                        <p id="Author">By <a asp-action="About" asp-controller="Home">@post.Author.FullName</a></p>
-                        <p id="PublishDate">@post.PublishDate</p>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <p id="Author">By <a asp-action="About" asp-controller="Home">@post.Author.FullName</a></p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <p id="PublishDate">@post.PublishDate</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
