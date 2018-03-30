@@ -1,11 +1,10 @@
 ﻿@model ContentfulMVC.Models.ViewModels.WhoIAm
-<div id="wiaHeader" style="background:url('http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg');background-size:cover;">
+<div id="wiaHeader" style="background:url('@Model.Pages.FeaturedImage.File.Url');background-size:cover;">
 
 </div>
 @Html.Partial("Wrapper")
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:0;">
-        <img class="hImage" src="http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg" />
         <img class="hImage" src="@Model.Pages.Image1.File.Url" />
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -19,12 +18,12 @@
         <p class="contentfulContent">@Model.Author.Backstory</p>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:0;">
-        <img class="hImage" src="http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg" />
+        <img class="hImage" src="@Model.Pages.Image2.File.Url" />
     </div>
 </div>
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:0;">
-        <img class="hImage" src="http://www.lol-wallpapers.com/wp-content/uploads/2017/07/Talon-Vs-Kayn-by-Anchorite-HD-Wallpaper-Background-Fan-Art-Artwork-League-of-Legends-lol.jpg" />
+        <img class="hImage" src="@Model.Pages.Image3.File.Url" />
         <contentful-image asset-id="5na3PJ1om4eyAQcmia0S8y" />
         
 

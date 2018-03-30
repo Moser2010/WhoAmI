@@ -33,15 +33,24 @@ namespace ContentfulMVC.Controllers
         public async Task<IActionResult> WhoIAm()
         {
             WhoIAm AAI = new WhoIAm();
-            AAI.Author = await _client.GetEntry<Author>("56WvqVr1oIOGqScqoY6EYK");
-            var Assets = await _client.GetAssets();
+            var qb = QueryBuilder<Author>.New.FieldEquals("sys.id", "56WvqVr1oIOGqScqoY6EYK");
+            var iqb = QueryBuilder<Pages>.New.FieldEquals("sys.id", "5jnJqcTTW8SQQoa6wS0u8y");
+            var pqb = QueryBuilder<Portfolio>.New.FieldEquals("sys.id", "3UsrI0nJzWu8Meiw2AIgE2");
+            AAI.Author = (await _client.GetEntries(qb)).FirstOrDefault();
+            AAI.Pages = (await _client.GetEntries(iqb)).FirstOrDefault();
+            AAI.Portfolio = (await _client.GetEntries(pqb)).FirstOrDefault();
             return View("WhoIAm", AAI);
         }
         public async Task<IActionResult> WhatIDo()
         {
-            
-            var author = await _client.GetEntry<Author>("56WvqVr1oIOGqScqoY6EYK");
-            return View("WhatIDo", author);
+            WhoIAm AAI = new WhoIAm();
+            var qb = QueryBuilder<Author>.New.FieldEquals("sys.id", "56WvqVr1oIOGqScqoY6EYK");
+            var iqb = QueryBuilder<Pages>.New.FieldEquals("sys.id", "5jnJqcTTW8SQQoa6wS0u8y");
+            var pqb = QueryBuilder<Portfolio>.New.FieldEquals("sys.id", "3UsrI0nJzWu8Meiw2AIgE2");
+            AAI.Author = (await _client.GetEntries(qb)).FirstOrDefault();
+            AAI.Pages = (await _client.GetEntries(iqb)).FirstOrDefault();
+            AAI.Portfolio = (await _client.GetEntries(pqb)).FirstOrDefault();
+            return View("WhatIDo", AAI);
         }
         public IActionResult Error()
         {

@@ -10,7 +10,7 @@ using Contentful.Core.Models;
 namespace ContentfulMVC.Models
 {
    
-    public class Author: MetaData
+    public class Author
     {
         public string FullName { get; set; }
         public string Bio { get; set; }

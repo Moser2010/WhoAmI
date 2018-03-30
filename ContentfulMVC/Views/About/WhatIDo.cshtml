@@ -57,7 +57,7 @@
     @foreach (var project in Model.Portfolio.PublishedProjects)
     {
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-right:0;">
-            <img class="hImage" src="@Model.Portfolio.PublishedProjects.FirstOrDefault().File.Url" />
+            <img class="hImage" src="@project.File.Url" />
         </div>
 
     }
