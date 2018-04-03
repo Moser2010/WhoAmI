@@ -8,6 +8,9 @@ $borderRadius: 3px;
         color: $primaryColor;
         margin-top: 125px;
 }
+//Font Imports
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 
 //Imports
 @import "horizontalGallery.scss";
@@ -17,10 +20,21 @@ $borderRadius: 3px;
 @import "WhatIDo.scss";
 
 html, body {
-    height: 100%;
-    #canvas {
-        overflow:hidden;
+    
+    h1, h2, h3 {
+        font-family: 'Kaushan Script', cursive;
     }
+
+    h4, h5, p {
+        font-family: 'Raleway', sans-serif;
+    }
+
+    height: 100%;
+
+    #canvas {
+        overflow: hidden;
+    }
+
     .grid-item {
         width: 200px;
     }
@@ -269,6 +283,16 @@ footer {
         color: white;
         margin-top: 15px;
     }
+    #footerMenue{
+        list-style:none;
+        padding:0;
+        text-align:center;
+        margin:10px auto;
+        li a{
+            color:$primaryColor;
+            font-weight:bold;
+        }
+    }
 
     h4 {
         color: darken($primaryColor, 100%);
@@ -510,6 +534,56 @@ footer {
 //425- Large Phone
 @media (max-width:425px){
     body {
+        .hgContentWrapper{
+            h1{
+              font-size:x-large;  
+              max-width:80%;
+            }
+            p{
+                max-width:80%;
+            }
+        }
+        .hgFeatured {
+            display:none;
+        }
+
+        .resetPadding {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+        }
+
+        .mobileHidden {
+            display: none;
+        }
+
+        header {
+            .padding {
+                padding: 10px;
+            }
+
+            .titleCont {
+                font-weight: bold;
+                color: $primaryColor;
+
+                h1 {
+                    font-size: smaller;
+                    font-weight: inherit;
+                    color: inherit;
+                    margin-bottom: 0;
+                }
+
+                h2 {
+                    margin: 0;
+                    font-weight: inherit;
+                    color: inherit;
+                }
+            }
+        }
+
+        #wrapper {
+            margin: 25px 0px;
+            padding: 0;
+        }
 
         .fixed {
             position: fixed;
@@ -546,19 +620,33 @@ footer {
             padding: 0 20px;
         }
     }
-}
+    }
 //768 - Tablet
 @media (max-width:768px){
     body {
+        .hgFeatured {
+            display: none;
+        }
 
+        .hgContentWrapper {
+            h1 {
+                font-size: xx-large;
+                max-width: 80%;
+            }
+
+            p {
+                max-width: 80%;
+            }
+        }
 
         .featuredBackground .headerWrapper {
             margin: 0px 20px;
 
             #Nav {
                 margin: 0px 20px;
-                li{
-                    margin-left:1em;
+
+                li {
+                    margin-left: 1em;
                 }
             }
         }
@@ -571,8 +659,9 @@ footer {
                 font-size: 1em;
             }
         }
+
         #featuredSection {
-            padding:0 20px;
+            padding: 0 20px;
         }
     }
 }

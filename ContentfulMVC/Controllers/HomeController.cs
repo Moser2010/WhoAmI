@@ -22,11 +22,13 @@ namespace ContentfulMVC.Controllers
         {
             //var qb = QueryBuilder<Posts>.New.FieldEquals(f => f.sys.Id, id);
             var allPosts = await _client.GetEntries<Posts>();
+            ViewData["Title"] = "Home";
             return View(allPosts);
         }
 
         public IActionResult Error()
         {
+            ViewData["Title"] = "Error";
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }

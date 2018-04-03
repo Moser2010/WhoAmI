@@ -1,33 +1,28 @@
 ﻿@model Posts
-
 @{
     ViewData["Title"] = "SinglePost";
 }
 
-
-
-@await Html.PartialAsync("horizontalGallery");
+@await Html.PartialAsync("horizontalGallery")
 @Html.Partial("Wrapper")
 <div class="row">
-    <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <h1>@Model.Title</h1>
-
-
-        <div class="col-lg-9">
-            <p class="contentfulContent">@Model.Content</p>
-        </div>
-        <div class="col-lg-3">
-            <aside style="text-align:right;">
-                <h3 style="text-align:center;">Recent Posts</h3>
-                @await Component.InvokeAsync("PostList")
-            </aside>
-        </div>
-
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+        <p class="contentfulContent">@Model.Content</p>
+    </div>
+    <div class="col-lg-3 col-md-3 mobileHidden">
+        <aside style="text-align:right;">
+            <h3 style="text-align:center;">Recent Posts</h3>
+            @await Component.InvokeAsync("PostList")
+        </aside>
     </div>
 </div>
 <div class="row">
     <div class="col-lg-12 comments">
         comments section using disqus!
     </div>
-
 </div>

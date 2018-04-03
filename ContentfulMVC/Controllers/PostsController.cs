@@ -20,7 +20,9 @@ namespace ContentfulMVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            
             var allPosts = await _client.GetEntries<Posts>();
+            ViewData["Title"] = "All Posts";
             return View(allPosts);
         }
         public async Task<IActionResult> SinglePost(string id)
@@ -29,6 +31,7 @@ namespace ContentfulMVC.Controllers
             var post = (await _client.GetEntries(qb)).FirstOrDefault();
             //var post = await _client.GetEntryAsync<Posts>(id);
             //var assets = await _client.GetAssetsAsync();
+            ViewData["Title"] = post.Title;
             return View(post);
         }
     }

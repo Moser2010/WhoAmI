@@ -28,6 +28,8 @@ namespace ContentfulMVC.Controllers
             AAI.Author = (await _client.GetEntries(qb)).FirstOrDefault();
             AAI.Pages = (await _client.GetEntries(iqb)).FirstOrDefault();
             AAI.Portfolio = (await _client.GetEntries(pqb)).FirstOrDefault();
+
+            ViewData["Title"] = "About Me";
             return View("Index", AAI);
         }
         public async Task<IActionResult> WhoIAm()
@@ -39,6 +41,7 @@ namespace ContentfulMVC.Controllers
             AAI.Author = (await _client.GetEntries(qb)).FirstOrDefault();
             AAI.Pages = (await _client.GetEntries(iqb)).FirstOrDefault();
             AAI.Portfolio = (await _client.GetEntries(pqb)).FirstOrDefault();
+            ViewData["Title"] = "Who I Am";
             return View("WhoIAm", AAI);
         }
         public async Task<IActionResult> WhatIDo()
@@ -50,6 +53,7 @@ namespace ContentfulMVC.Controllers
             AAI.Author = (await _client.GetEntries(qb)).FirstOrDefault();
             AAI.Pages = (await _client.GetEntries(iqb)).FirstOrDefault();
             AAI.Portfolio = (await _client.GetEntries(pqb)).FirstOrDefault();
+            ViewData["Title"] = "What I Do";
             return View("WhatIDo", AAI);
         }
         public IActionResult Error()
