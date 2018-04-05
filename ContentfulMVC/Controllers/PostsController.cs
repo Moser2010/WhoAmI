@@ -20,7 +20,6 @@ namespace ContentfulMVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            
             var allPosts = await _client.GetEntries<Posts>();
             ViewData["Title"] = "All Posts";
             return View(allPosts);

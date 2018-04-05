@@ -4,37 +4,32 @@
 @Html.Partial("Wrapper")
 <h2>Posts</h2>
 <div id="grid" class="grid">
-    @foreach (var post in Model)
+    @foreach (var post in Model.OrderByDescending(Posts => Posts.PublishDate))
     {
-        <div class="item">
-            <a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">
-                <img class="masonryImage" src="@post.FeaturedImage.File.Url" />
-            </a>
-
-            <div class="content">
+            <div class="item">
                 <a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">
-                    <h2>@post.Title </h2>
-
+                    <img class="masonryImage" src="@post.FeaturedImage.File.Url" />
                 </a>
-                <hr />
-                <p>@post.Content.Substring(0, 120)<a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">...More</a></p>
-                <div class="publications">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <p id="Author">By <a asp-action="About" asp-controller="Home">@post.Author.FullName</a></p>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <p id="PublishDate">@post.PublishDate</p>
+
+                <div class="content">
+                    <a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">
+                        <h2>@post.Title </h2>
+
+                    </a>
+                    <hr />
+                    <p>@post.Content.Substring(0, 120)<a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">...More</a></p>
+                    <div class="publications">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <p id="Author">By <a asp-action="About" asp-controller="Home">@post.Author.FullName</a></p>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <p id="PublishDate">@post.PublishDate</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-
-
-
     }
 </div>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-

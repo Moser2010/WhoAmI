@@ -11,19 +11,20 @@
     </environment>
 </head>
 <body>
-    
-    @await Component.InvokeAsync("Nav")
-    @await  Html.PartialAsync("../Shared/_featuredBar.cshtml")
-    @RenderBody()
-@await Component.InvokeAsync("Footer")
 
+    @await Component.InvokeAsync("Nav")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @await Html.PartialAsync("../Shared/_featuredBar.cshtml")
+    }
+    @RenderBody()
+    @await Component.InvokeAsync("Footer")
     <environment include="Development">
         <script src="~/js/main.js" asp-append-version="true"></script>
     </environment>
     <environment include="Production">
         <script src="~/dist/js/main.js" asp-append-version="true"></script>
     </environment>
-
     @RenderSection("Scripts", required: false)
 </body>
 </html>

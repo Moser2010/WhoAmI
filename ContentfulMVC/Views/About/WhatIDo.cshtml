@@ -56,12 +56,28 @@
 <div id="widProDetails" class="row" style="margin:0;">
     @foreach (var project in Model.Portfolio.PublishedProjects)
     {
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 project" style="height:500px;padding:0;background:url(@project.File.Url);background-size:cover;">
-            <div>
-                <h3>@project.Title</h3>
-                <p>@project.Description</p>
+        if (project.Title == "DND_Map_Project")
+        {
+            <a href="https://moser2010.github.io">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 project" style="height:500px;padding:0;background:url(@project.File.Url);background-size:cover;">
+                    <div>
+                        <h3 style="color:black;">@project.Title</h3>
+                        <p style="color:black;">@project.Description</p>
+                    </div>
+                </div>
+            </a>
+        }
+        else
+        {
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 project" style="height:500px;padding:0;background:url(@project.File.Url);background-size:cover;">
+                <div>
+                    <h3 style="color:black;">@project.Title</h3>
+                    <p style="color:black;">@project.Description</p>
+                </div>
             </div>
-        </div>
+
+        }
+
 
     }
 </div>

@@ -6,7 +6,6 @@
     {
         @if (post.featuredPost == true)
         {
-            
             <div class="item">
                 <a href="@Url.Action("SinglePost", "Posts", new { id = post.sys.Id })">
                     <img class="masonryImage" src="@post.FeaturedImage.File.Url" />

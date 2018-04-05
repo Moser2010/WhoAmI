@@ -22,8 +22,9 @@ namespace ContentfulMVC.Controllers
         {
             //var qb = QueryBuilder<Posts>.New.FieldEquals(f => f.sys.Id, id);
             var allPosts = await _client.GetEntries<Posts>();
+           var orderedPosts =  allPosts.OrderByDescending(Posts => Posts.PublishDate);
             ViewData["Title"] = "Home";
-            return View(allPosts);
+            return View(orderedPosts);
         }
 
         public IActionResult Error()
