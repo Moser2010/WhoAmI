@@ -2,7 +2,7 @@
 
 
 @Html.Partial("Wrapper")
-<h2>Posts</h2>
+<h2 style="text-align:center;">Posts</h2>
 <div id="grid" class="grid">
     @foreach (var post in Model.OrderByDescending(Posts => Posts.PublishDate))
     {

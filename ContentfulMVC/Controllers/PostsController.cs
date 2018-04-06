@@ -20,7 +20,8 @@ namespace ContentfulMVC.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var allPosts = await _client.GetEntries<Posts>();
+            var q = QueryBuilder<Posts>.New.ContentTypeIs("post");
+            var allPosts = await _client.GetEntries<Posts>(q);
             ViewData["Title"] = "All Posts";
             return View(allPosts);
         }
