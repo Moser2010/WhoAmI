@@ -1,11 +1,12 @@
 ﻿
 @await Component.InvokeAsync("Header")
 @Html.Partial("Wrapper")
-<h3>To Do List</h3>
+<h2 style="font-weight:bold;">Posts</h2>
+<!--<h3>To Do List</h3>
 <ol>
-    <!--<li>add a simple error page</li>-->
+    <li>add a simple error page</li>
     <li>Add functionality to be able to see recent posts and featured Posts(could do this with a toggle or if there is a better way then do that)</li>
-</ol>
-@await Html.PartialAsync("../Shared/_Posts.cshtml");
+</ol>-->
+@await Html.PartialAsync("../Shared/_Posts.cshtml")
 
 

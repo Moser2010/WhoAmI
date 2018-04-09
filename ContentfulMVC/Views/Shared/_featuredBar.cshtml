@@ -4,7 +4,7 @@
             @if (ViewContext.RouteData.Values["controller"].ToString() == "Posts" && ViewContext.RouteData.Values["action"].ToString() == "Index")
     {
         <div class="col-sm-4 col-md-4 col-lg-4 col-xs-4">
-            <h4 id="pageTitle">Featured</h4>
+            <h4 id="pageTitle" style="font-weight:bold;">Featured</h4>
         </div>
         <div class="col-sm-8 col-md-8 col-lg-8 col-xs-8">
             <ul id="pageOptions">
@@ -16,7 +16,7 @@
 else if (ViewContext.RouteData.Values["controller"].ToString() == "Home" && ViewContext.RouteData.Values["action"].ToString() == "Index")
 {
         <div class="col-sm-12 col-md-12 col-lg-12">
-            <h4 id="pageTitle" style="text-align:left;width:100%;">Featured</h4>
+            <h4 id="pageTitle" style="text-align:left;width:100%; font-weight:bold;">Featured</h4>
         </div>
 }
 else
