@@ -21,10 +21,10 @@ namespace ContentfulMVC.Controllers
         public async Task<IActionResult> Index()
         {
             //var qb = QueryBuilder<Posts>.New.FieldEquals(f => f.sys.Id, id);
-            var allPosts = await _client.GetEntries<Posts>();
+           var allPosts = await _client.GetEntriesByType<Posts>("post");
            var orderedPosts =  allPosts.OrderByDescending(Posts => Posts.PublishDate);
-            ViewData["Title"] = "Home";
-            return View(orderedPosts);
+           ViewData["Title"] = "Home";
+           return View(orderedPosts);
         }
 
         public IActionResult Error()
