@@ -9,6 +9,18 @@
     <environment include="Production">
         <link rel="stylesheet" href="~/dist/css/main.css" asp-append-version="true" />
     </environment>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-120289675-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-120289675-1');
+    </script>
+    <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+    <script type="text/javascript">require(["mojo/signup-forms/Loader"], function (L) { L.start({ "baseUrl": "mc.us18.list-manage.com", "uuid": "fc4f50c516f405435a2ff9610", "lid": "2c71b885ac" }) })</script>
+
 </head>
 <body>
 
