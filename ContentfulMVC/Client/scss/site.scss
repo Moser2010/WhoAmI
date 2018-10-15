@@ -283,14 +283,16 @@ footer {
         color: white;
         margin-top: 15px;
     }
-    #footerMenue{
-        list-style:none;
-        padding:0;
-        text-align:center;
-        margin:10px auto;
-        li a{
-            color:$primaryColor;
-            font-weight:bold;
+
+    #footerMenue {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        margin: 10px auto;
+
+        li a {
+            color: $primaryColor;
+            font-weight: bold;
         }
     }
 
@@ -313,10 +315,11 @@ footer {
     }
 
     .footerPostList {
-        margin:10px auto;
-        width:170px;
+        margin: 10px auto;
+        width: 170px;
+
         p {
-            font-weight:bold;
+            font-weight: bold;
             margin: 0px;
             text-align: center;
 
@@ -349,7 +352,7 @@ footer {
                 padding: 10px;
                 border-radius: 20px 3px 20px 3px;
 
-                .fa-facebook-f {
+                .fa-instagram-f {
                     color: aqua;
                     transition: 1s;
                 }
@@ -373,7 +376,7 @@ footer {
                     transform: scale(1.1);
                     transition: 0.1s;
 
-                    .fa-facebook {
+                    .fa-instagram {
                         color: #3b5998;
                         transition: 0.7s;
                         opacity: .5;
@@ -399,9 +402,9 @@ footer {
                 }
             }
 
-            #facebook {
+            #instagram {
                 &:hover {
-                    background: url("https://biteable.com/content/uploads/2017/09/videogif2.gif");
+                    background: url("https://petapixel.com/assets/uploads/2017/03/2gif6.gif");
                     background-position: center;
                     background-size: cover;
                     transition: 1s;
